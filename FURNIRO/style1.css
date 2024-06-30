@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* Reset styling */
+
+:root {
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --bg-primary: #FFF;
+  --bg-secondary: #FFF3E3;
+  --bg-tertiary: #B88E2F;
+  --tx-primary: #333333;
+  --tx-secondary: #B88E2F;
+  --tx-tertiary: #FFF;
+  --tx-light: #666666;
+  --tx-highlight: #FFF;
+  --bg-warning: #E97171;
+  --bg-accept: #2EC1AC;
+
+
+
+  font-size: calc(1rem + 0.25dvw);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  overscroll-behavior: contain;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+button:hover, a:hover {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+}
+
+
+header {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  align-items: center;
+  padding: 1rem 3rem;
+  position: fixed;
+  top: 0;
+  width: 100dvw;
+  background-color: white;
+  z-index: 100;
+}
+
+#page-logo {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+#brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+#brand-name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--fw-bold);
+  margin-block: 0;
+}
+
+#page-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#support-nav {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+}
+
+#page-nav-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-block: 0;
+}
+
+#support-nav-list {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  justify-content: right;
+  margin-block: 0;
+}
+
+#support-nav-list li {
+  margin-inline-start: 1rem;
+  color: black;
+}
+
+
+#page-nav-list li a,
+#support-nav-list li a {
+  font-weight: var(--fw-medium);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-nav-list li a:hover,
+#support-nav-list li a:hover {
+  font-weight: var(--fw-bold);
+}
+
+
+
+#btn{
+    width: min(90%, 13rem);
+    height: 4rem;
+    cursor: pointer;
+    color:var(--tx-tertiary);
+    font-weight: var(--fw-bold);
+    background-color: var(--bg-tertiary);
+
+}
+
+#btn:hover{
+    background-color: #c0a25d;
+}
+
+#btn:active{
+    background-color: #8e6c1d;
+}
+/* Hero styles */
+.hero {
+    background-color: #f2f2f2;
+    padding: 100px 0;
+}
+
+.hero-content {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    float: right;
+    width: 50%;
+    padding: 20px;
+}
+
+.hero-image img {
+    width: 100%;
+}
+
+/* Browse styles */
+.browse {
+    flex: auto;
+    padding: 50px 0;
+}
+
+.browse-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.browse-description {
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.browse-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.browse-item {
+    width: 25%;
+    margin: 0 10px;
+}
+
+.browse-item img {
+    width: 100%;
+}
+
+
+
+.product .new {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+button {
+    
+    color: #8e6c1d;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #c0a25d;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
