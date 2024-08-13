@@ -54,7 +54,12 @@ let resp = null;
 async function loadprod() {
     if (fetched == true){
         var sth = JSON.parse(sessionStorage.getItem("products"));
-        return sth;
+        sth.forEach((product) => { 
+            const disprodhtml = genprod(product); 
+            container.insertAdjacentHTML("beforeend",disprodhtml);
+            var b = JSON.stringify(prod);
+            sessionStorage.setItem("product_list",b);
+        });
     }
     resp = await fetch("https://cdn.fbsbx.com/v/t59.2708-21/449343845_1131565694580699_2235725881703779531_n.json/data.json?_nc_cat=106&ccb=1-7&_nc_sid=2b0e22&_nc_ohc=nhlgVFRgJXMQ7kNvgHCKrCb&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QF6Q3GQbLT7xkxUIQfdcmOmpoZfaSX6cyCyS1CoF5LbPw&oe=66834DED&dl=1"); 
     let prod = await resp.json(); 
