@@ -1,218 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniro</title>
-    <link rel="icon" href="https://furniro-chi.vercel.app/assets/logo-6c9a7eab.svg">
-    <link rel="stylesheet" href="css/universal.css">
-    <link rel="stylesheet" href="css/home.css">
+<meta charset="UTF-8">
 
+<style>
+:root {
+    --lhp-blue: #2d5a8e;
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* CARD STYLE */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* HEADER */
+.contact-header {
+    color: #d9230f;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* INFO */
+.info-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.info-section a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.info-section a:hover {
+    text-decoration: underline;
+}
+
+/* MAP */
+.map-container {
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* FORM */
+.feedback-title {
+    color: #d9230f;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group label span {
+    color: red;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--lhp-blue);
+    outline: none;
+}
+
+.form-group textarea {
+    max-width: 100%;
+    height: 100px;
+}
+
+.btn-submit {
+    background-color: #f0f0f0;
+    border: 1px solid #767676;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #e5e5e5;
+    transform: scale(1.05);
+}
+
+/* TESTIMONIAL */
+.testimonials h2 {
+    color: #d9230f;
+    margin-bottom: 15px;
+}
+
+.testimonial {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fafafa;
+    border-left: 4px solid var(--lhp-blue);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.testimonial:hover {
+    background: #f5f5f5;
+}
+
+.testimonial img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.testimonial-quote {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.testimonial-author {
+    font-size: 13px;
+    color: #555;
+}
+
+/* IMAGE PLACEHOLDER */
+.image-placeholder {
+    height: 300px;
+    border-radius: 10px;
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    overflow: hidden; /* QUAN TRỌNG */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ảnh tự fit đẹp */
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--lhp-blue);
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.phone-frame {
+    width: 300px;
+    height: 600px;
+    margin: auto;
+    border: 12px solid #222;
+    border-radius: 35px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+    background: black;
+}
+
+/* Tai thỏ */
+.phone-frame::before {
+    content: "";
+    width: 120px;
+    height: 20px;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 10;
+}
+
+/* Map bên trong */
+.phone-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
 </head>
 
 <body>
-    <header>
-        <div id ="page_logo">
-            <a href="index.html" id="brand_logo">
-                <img id="Logo" src="https://furniro-chi.vercel.app/assets/logo-6c9a7eab.svg" alt="Furniro logo">
-                <h1 id="brand_name">Furniro</h1>
-            </a> 
-        </div>
-        <nav id="page_nav">
-            <ul id="page-nav-list">
-                <li><a href="index.html" id="home_link" class="top_page_link">Home</a></li>
-                <li><a href="shop.html" id="shop_link" class="top_page_link">Shop</a></li>
-                <li><a href="about.html" id="about_link" class="top_page_link">About</a></li>
-                <li><a href="contact.html" id="contact_link" class="top_page_link">Contact</a></li>
-            </ul>
-        </nav>
 
-        <nav id="support_nav">
-            <ul id="support-nav-list">
-                <li><a href="personal_alert.html"><span class="top_left_link">personal_alert</span></a></li>
-                <li><a href="search.html"><span class="top_left_link">search</span></a></li>
-                <li><a href="favourite.html"><span class="top_left_link">favourite</span></a></li>
-                <li><a href="shopping.html"><span class="top_left_link">shopping</span></a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="container">
 
-    <main>
-        <section id="Announcement">
-            <div id="Announcement-box">
-                <p id="heading1">New arrival</p>
-                <h1 id="heading2">Discover Our New Collection</h1>
-                <p id="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
-            </div>
-        </section>
+<!-- CONTACT -->
+<div class="card fade-in">
+    <div class="contact-header">Liên hệ trực tiếp</div>
+    <div class="info-section">
+        <p><strong>Trường THPT Chuyên Lê Hồng Phong</strong></p>
+        <p>Địa chỉ: 235 Nguyễn Văn Cừ, TP. Hồ Chí Minh</p>
+        <p>Điện thoại: (+84 - 28) 38398506 Fax : (+84 -28) 38353089</p>
+        <p>E-mail: <a href="#">thptlehongphong@hcm.edu.vn</a></p>
+    </div>
+</div>
 
-        <section id="section2">
-            <h2 id="sec2-heading"><b>Browse The Range</b></h2>
-            <p id="sec2-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<!-- MAP -->
+<div class="card fade-in">
+  <div class="phone-frame">
+    <iframe 
+      src="https://maps.google.com/maps?q=Le%20Hong%20Phong%20High%20School%20HCMC&output=embed"
+      frameborder="0">
+    </iframe>
+  </div>
+</div>
 
-            <div class="room">
-                <img class="room_image" id="diningroom" src="https://furniro-tural.vercel.app/assets/range2-96886d79.png" alt="diningroom">
-                <h5 class="room_name">Dining</h5>
-            </div>
+<!-- TESTIMONIAL -->
+<div class="card fade-in">
+    <div class="testimonials">
+        <h2>Cảm nhận về trường</h2>
 
-            <div class="room">
-                <img class="room_image" id="livingroom" src="https://furniro-tural.vercel.app/assets/range3-429f9c6a.png" alt="livingroom">
-                <h5 class="room_name">Living</h5>
-            </div>
-
-            <div class="room">
-                <img class="room_image" id="bedroom" src="https://furniro-tural.vercel.app/assets/range1-ecfa19a6.png" alt="bedroom">
-                <h5 class="room_name">Bedroom</h5>
-            </div>
-        </section>
-
-        <section id="section3">
-            <h2 id="sec3-heading"><b>Our Products</b></h2>
-            <div class="products">
-                <div class="products_row" id="row1">
-                    <div class="products_showcase" id="Slytherine">
-                        <img class="product_image" src="https://furniro-tural.vercel.app/assets/product1-7c328aa7.png" alt="Slytherine">
-                        <span class="sale">
-                            <p>-30%</p>
-                        </span>
-
-                        <h3 class="product_name">Slytherine</h3>
-                        <p class="product_description">Stylish cafe chair</p>
-                        <h3 class="product_price">Rp 2.500.000</h3>
-                        <p class="old_price"><del>Rp 3.500.000</del></p>
-                    </div>
-
-                    <div class="products_showcase" id="Leviosa">
-                        <img class="product_image" src="lelito.png" alt="Leviosa">
-                        <h3 class="product_name">Leviosa</h3>
-                        <p class="product_description">Stylish cafe chair</p>
-                        <h3 class="product_price">Rp 2.500.000</h3>
-                    </div>
-
-                    <div class="products_showcase" id="Lolito">
-                        <img class="product_image" src="lolito.png" alt="Lolito">
-                        <span class="sale">
-                            <p>-50%</p>
-                        </span>
-
-                        <h3 class="product_name">Lolito</h3>
-                        <p class="product_description">Luxury big sofa</p>
-                        <h3 class="product_price">Rp 7.000.000</h3>
-                    </div>
-
-                    <div class="products_showcase" id="Respira">
-                        <img class="product_image" src="respira.png" alt="Respira">
-                        <span class="new">
-                            <p>New</p>
-                        </span>
-
-                        <h3 class="product_name">Respira</h3>
-                        <p class="product_description">Outdoor bar table and stool</p>
-                        <h3 class="product_price">Rp 500.000</h3>
-                    </div>
+        <div class="testimonial">
+            <img src="file:///C:/Users/Admin/Downloads/Logo_Kenh14_(2).svg">
+            <div>
+                <div class="testimonial-quote">
+                    “Ngôi trường cấp 3 được mệnh danh là LUÔN HẠNH PHÚC.”
                 </div>
-
-                <div class="products_row" id="row2">
-                    <div class="products_showcase" id="Grifo">
-                        <img class="product_image" src="Grifo.png" alt="Grifo">
-                        <h3 class="product_name">Grifo</h3>
-                        <p class="product_description">Night lamp</p>
-                        <h3 class="product_price">Rp 1.500.000</h3>
-                    </div>
-
-                    <div class="products_showcase" id="Muggo">
-                        <img class="product_image" src="Muggo.png" alt="Muggo">
-                        <span class="new">
-                            <p>New</p>
-                        </span>
-
-                        <h3 class="product_name">Muggo</h3>
-                        <p class="product_description">Small mug</p>
-                        <h3 class="product_price">Rp 150.000</h3>
-                    </div>
-
-                    <div class="products_showcase" id="Pingky">
-                        <img class="product_image" src="pingky.png" alt="Pingky">
-                        <span class="sale">
-                            <p>-50%</p>
-                        </span>
-
-                        <h3 class="product_name">Pingky</h3>
-                        <p class="product_description">Cute bed set</p>
-                        <h3 class="product_price">Rp 7.000.000</h3>
-                        <p class="old_price"><del>Rp 14.000.000</del></p>
-                    </div>
-
-                    <div class="products_showcase" id="Potty">
-                        <img class="product_image" src="Muggo.png" alt="Muggo">
-                        <span class="new">
-                            <p>New</p>
-                        </span>
-
-                        <h3 class="product_name">Muggo</h3>
-                        <p class="product_description">Small mug</p>
-                        <h3 class="product_price">Rp 150.000</h3>
-                    </div>
-
-                    <div class="products_showcase" id="Potty">
-                        <img class="product_image" src="potty.png" alt="Potty">
-                        <h3 class="product_name">Potty</h3>
-                        <p class="product_description">Minimalist flower pot</p>
-                        <h3 class="product_price">Rp 500.000</h3>
-                    </div>
-                </div>              
+                <div class="testimonial-author">- Kenh14 -</div>
             </div>
+        </div>
 
-            <button id="show-more">Show More</button>
-
-        </section>
-
-
-    </main>
-
-    <footer>
-
-        <hr>
-
-        <h3 id="footer-heading-1"> Furniro.</h3>
-        <p id="address">
-            400 University Drive Suite 200 Coral Gables,
-            FL 33134 USA</p>
-        
-        <nav id="footer-nav">
-            <div class="footer-container" id="footer-link">
-                <p class="footer-heading">Link</p>
-                <ul class="footer-list">
-                    <li><a class="footer-link" href="index.html">Home</a></li>
-                    <li><a class="footer-link" href="shop.html">Shop</a></li>
-                    <li><a class="footer-link" href="about.html">About</a></li>
-                    <li><a class="footer-link" href="contact.html">Contact</a></li>
-                </ul>
+        <div class="testimonial">
+            <img src="download (1).png">
+            <div>
+                <div class="testimonial-quote">
+                    “Ai lại không tự hào cho được khi nói mình là cựu học sinh trường chuyên Lê Hồng Phong cơ chứ?”
+                </div>
+                <div class="testimonial-author">- Lê Minh Đức (niên khóa 21-24) -</div>
             </div>
+        </div>
 
-            <div class="footer-container" id="footer-help">
-                <p class="footer-heading">Help</p>
-                <ul class="footer-list">
-                    <li><a class="footer-link" href="Payment-Options.html">Payment Options</a></li>
-                    <li><a class="footer-link" href="Returns.html">Returns</a></li>
-                    <li><a class="footer-link" href="Privacy-Policies.html">Privacy Policies</a></li>    
-                </ul>
-            </div>
+    </div>
+</div>
 
-            <form class="footer-container" action="" method="get">
-                <p class="footer-heading">Newsletter</p>
-                <input type="text" placeholder="Enter Your Email Address">
-                <button id="subscribe">SUBSCRIBE</button>
-            </form>
-        </nav>
+<!-- IMAGE -->
+<div class="card fade-in">
+    <div class="image-placeholder">
+        <img src="anhdep.jpg">
+    </div>
+</div>
 
-        <hr>
+<!-- FORM -->
+<div class="card fade-in">
+    <div class="feedback-title">Góp ý kiến</div>
+    <form>
+        <div class="form-group">
+            <label>Họ tên <span>*</span></label>
+            <input type="text" required>
+        </div>
+        <div class="form-group">
+            <label>Email <span>*</span></label>
+            <input type="email" required>
+        </div>
+        <div class="form-group">
+            <label>Nội dung <span>*</span></label>
+            <textarea required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Gửi</button>
+    </form>
+</div>
 
-        <p id="copy-right">2023 furino. All rights reverved</p>
+</div>
 
+<footer>
+    <p>Trường THPT chuyên Lê Hồng Phong - Tp. Hồ Chí Minh</p>
+    <p>Địa chỉ: 235 Nguyễn Văn Cừ, TP. Hồ Chí Minh</p>
+</footer>
 
-    </footer>
-
-    
 </body>
 </html>
